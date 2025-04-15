@@ -96,6 +96,37 @@ WHERE altura > 1.78;
 SELECT * FROM cliente
 WHERE altura < 1.70;
 
+--combinando maior que menor que
+SELECT * FROM cliente
+WHERE altura > 1.78 OR altura < 1.70;
+
+--Selecionando um dado na tabela que contenha a letra a
+SELECT * FROM cliente
+WHERE primeironome LIKE '%a%';
+
+--Selecionando um dado exato na tabela
+SELECT * FROM cliente
+WHERE primeironome LIKE '%Ana Claudia%';
+
+--Selecionando duas colunas na tabela que contenha a letra "a" e "s"
+SELECT * FROM cliente
+WHERE primeironome LIKE '%a%' AND sobrenome LIKE '%s%'; 
+
+--Selecionando duas colunas na tabela com dado exato
+SELECT * FROM cliente
+WHERE primeironome LIKE '%Carlos%' AND sobrenome LIKE '%Pereira%'; 
+
+--Selecionando um dado que contenha um valor com casa decimal
+SELECT * FROM cliente
+WHERE CAST(valor AS CHAR) LIKE '%150.00%';
+
+--Selecionando pagamentos cujo o valor contenha 00
+SELECT * FROM cliente
+WHERE CAST(valor AS CHAR) LIKE '%00%';
+
+SELECT * FROM cliente
+WHERE CAST(valor AS CHAR) LIKE '%150.00%';
+
 --Criando tabela treino
 CREATE TABLE treino(
 diadasemana DATE NOT NULL, 
